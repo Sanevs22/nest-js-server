@@ -1,23 +1,23 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { AppService } from './app.service';
-import { Purchase } from './dto/purchase.dto';
+import {  Card } from './dto/card.dto';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getAll(): Purchase[] {
+  getAll(): Card[] {
     return this.appService.getAll();
   }
 
   @Post()
-  create(@Body() purchase: Purchase ){
+  create(@Body() purchase: Card ){
     this.appService.create(purchase);
   }
 
   @Put(':id')
-  update(@Body() purchase: Purchase, @Param('id') id: string){
+  update(@Body() purchase: Card, @Param('id') id: string){
    return this.appService.update(purchase, id);
   }
 
