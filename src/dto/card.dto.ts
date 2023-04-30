@@ -1,6 +1,5 @@
-export class Card {
-    id: string;
-    title: string;
-    comment: string;
-  }
-  
+export interface Card {
+  id: string;
+  title: string;
+  comment: string;
+}
